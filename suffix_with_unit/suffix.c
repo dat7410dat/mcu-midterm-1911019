@@ -66,7 +66,7 @@ void suffixWithUnit(char *str, double number) {
         return;
     }
 
-    /*  */
+    /* negative power */
     while (temp <= 1. && count <= 8) {
         count++;
         temp *= 1000.0;
