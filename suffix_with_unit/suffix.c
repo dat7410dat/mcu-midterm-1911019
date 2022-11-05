@@ -30,36 +30,39 @@ void suffixWithUnit(char *str, double number) {
             temp /= 1000.;
         }
         switch (count) {
-        case 1:
-            sprintf(str, "%lf Kilo", temp);
-            break;
-        case 2:
-            sprintf(str, "%lf Mega", temp);
-            break;
-        case 3:
-            sprintf(str, "%lf Giga", temp);
-            break;
-        case 4:
-            sprintf(str, "%lf Tera", temp);
-            break;
-        case 5:
-            sprintf(str, "%lf Peta", temp);
-            break;
-        case 6:
-            sprintf(str, "%lf Exa", temp);
-            break;
-        case 7:
-            sprintf(str, "%lf Zetta", temp);
-            break;
-        case 8:
-            sprintf(str, "%lf Yotta", temp);
-            break;
+            case 0:
+                sprintf(str, "%lf", number);
+                break;
+            case 1:
+                sprintf(str, "%lf Kilo", temp);
+                break;
+            case 2:
+                sprintf(str, "%lf Mega", temp);
+                break;
+            case 3:
+                sprintf(str, "%lf Giga", temp);
+                break;
+            case 4:
+                sprintf(str, "%lf Tera", temp);
+                break;
+            case 5:
+                sprintf(str, "%lf Peta", temp);
+                break;
+            case 6:
+                sprintf(str, "%lf Exa", temp);
+                break;
+            case 7:
+                sprintf(str, "%lf Zetta", temp);
+                break;
+            case 8:
+                sprintf(str, "%lf Yotta", temp);
+                break;
 
-        /* number too large */
-        default:
-            sprintf(str, "%lf", number);
-            break;
-        }
+            /* number too large */
+            default:
+                sprintf(str, "%lf Yotta", temp * 1000);
+                break;
+            }
         return;
     }
 
@@ -96,14 +99,14 @@ void suffixWithUnit(char *str, double number) {
 
     /* number too small */
     default:
-        sprintf(str, "%lf", number);
+        sprintf(str, "%lf yocto", temp * 1e-3);
         break;
     }
 }
 
 int main() {
     char str[30];
-    for (int i = -27; i <= 27; i += 3) {
+    for (int i = -30; i <= 30; i += 3) {
         suffixWithUnit(str, 123.45 * pow(10., (double)i));
         printf("123.45e%d -> %s\n", i, str);
     }
