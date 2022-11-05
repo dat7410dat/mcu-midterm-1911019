@@ -25,7 +25,7 @@ void suffixWithUnit(char *str, double number) {
     double temp = number;
 
     if (temp >= 1) {
-        while (temp >= 1000 && count <= 8) {
+        while (temp >= 1000. && count <= 8) {
             count++;
             temp /= 1000.;
         }
@@ -60,7 +60,7 @@ void suffixWithUnit(char *str, double number) {
 
             /* number too large */
             default:
-                sprintf(str, "%lf Yotta", temp * 1000);
+                sprintf(str, "%lf Yotta", temp * 1000.);
                 break;
             }
         return;
