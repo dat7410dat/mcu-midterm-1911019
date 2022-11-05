@@ -637,8 +637,8 @@ void fsm_automatic_run(){
  8000558:	681b      	ldr	r3, [r3, #0]
  800055a:	4618      	mov	r0, r3
  800055c:	f7ff fe9c 	bl	8000298 <display7SEG>
-				set_timer_display(200);
- 8000560:	20c8      	movs	r0, #200	; 0xc8
+				set_timer_display(250);
+ 8000560:	20fa      	movs	r0, #250	; 0xfa
  8000562:	f000 fa67 	bl	8000a34 <set_timer_display>
 			if(timer_led_flag == 1){
  8000566:	4b0a      	ldr	r3, [pc, #40]	; (8000590 <fsm_automatic_run+0x68>)

@@ -18,7 +18,7 @@ void fsm_automatic_run(){
 		case AUTO_DISPLAY:
 			if(timer_display_flag == 1){
 				display7SEG(counter);
-				set_timer_display(200);
+				set_timer_display(250);
 			}
 			if(timer_led_flag == 1){
 				HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
