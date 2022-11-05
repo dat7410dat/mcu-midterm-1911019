@@ -1,0 +1,4 @@
+../Core/Src/fsm_button.c:10:6:counter_up	4	static
+../Core/Src/fsm_button.c:14:6:counter_down	4	static
+../Core/Src/fsm_button.c:20:6:check_button_released	16	static
+../Core/Src/fsm_button.c:27:6:fsm_simple_buttons_run	8	static
