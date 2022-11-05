@@ -34,40 +34,40 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := mcu-midterm
+BUILD_ARTIFACT_NAME := mcu-midterm-1911019
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-mcu-midterm.elf \
+mcu-midterm-1911019.elf \
 
 MAP_FILES += \
-mcu-midterm.map \
+mcu-midterm-1911019.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-mcu-midterm.list \
+mcu-midterm-1911019.list \
 
 OBJCOPY_HEX += \
-mcu-midterm.hex \
+mcu-midterm-1911019.hex \
 
 OBJCOPY_BIN += \
-mcu-midterm.bin \
+mcu-midterm-1911019.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: mcu-midterm.elf secondary-outputs
+main-build: mcu-midterm-1911019.elf secondary-outputs
 
 # Tool invocations
-mcu-midterm.elf mcu-midterm.map: $(OBJS) $(USER_OBJS) C:\Users\Nguyen\ Tien\ Dat\Documents\.code\stm32\mcu-midterm\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "mcu-midterm.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Nguyen Tien Dat\Documents\.code\stm32\mcu-midterm\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="mcu-midterm.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+mcu-midterm-1911019.elf mcu-midterm-1911019.map: $(OBJS) $(USER_OBJS) C:\Users\Nguyen\ Tien\ Dat\Documents\.code\stm32\mcu-midterm-1911019\STM32F103C6UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "mcu-midterm-1911019.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\Nguyen Tien Dat\Documents\.code\stm32\mcu-midterm-1911019\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="mcu-midterm-1911019.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -76,24 +76,24 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-mcu-midterm.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "mcu-midterm.list"
+mcu-midterm-1911019.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "mcu-midterm-1911019.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-mcu-midterm.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "mcu-midterm.hex"
+mcu-midterm-1911019.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "mcu-midterm-1911019.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-mcu-midterm.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "mcu-midterm.bin"
+mcu-midterm-1911019.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "mcu-midterm-1911019.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout mcu-midterm.bin mcu-midterm.elf mcu-midterm.hex mcu-midterm.list mcu-midterm.map
+	-$(RM) default.size.stdout mcu-midterm-1911019.bin mcu-midterm-1911019.elf mcu-midterm-1911019.hex mcu-midterm-1911019.list mcu-midterm-1911019.map
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)

@@ -11,4 +11,3 @@ int status = 0;
 int button_status = 0;
 
 int counter = 0;
-int sleep_counter = 0;

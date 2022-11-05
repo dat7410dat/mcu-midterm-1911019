@@ -44,26 +44,32 @@ void fsm_simple_buttons_run(){
 				button_status = BUTTON_DEC_PRESSED;
 			}
 
-			/* Sleep  state after 10s no button event */
+			/* Sleep state after 10s no button event */
 			if(timer_button_flag == 1){
 				button_status = BUTTON_SLEEP;
-				status = SLEEP;
+				set_timer_button(1000);
 			}
 			break;
 
-		/* When status == SLEEP */
+		/* After waiting 10s */
 		case BUTTON_SLEEP:
-			if(button_pressed_flags[1] == 1 || button_pressed_flags[2] == 1){
-				button_pressed_flags[1] = 0;
-				button_pressed_flags[2] = 0;
+			if(button_pressed_flags[1] == 1){
+				counter_up();
+				set_timer_button(3000);
 
-				sleep_counter = counter;
-				set_timer_button(10000);
-				button_status = BUTTON_ALL_RELEASED;
+				button_status = BUTTON_INC_PRESSED;
+			}
+			if(button_pressed_flags[2] == 1){
+				counter_down();
+				set_timer_button(3000);
 
-				set_timer_display(250);
-				set_timer_led(250);
-				status = AUTO_DISPLAY;
+				button_status = BUTTON_DEC_PRESSED;
+			}
+
+			/* counter down each 1s */
+			if(timer_button_flag == 1){
+				if(counter > 0) counter--;
+				set_timer_button(1000);
 			}
 
 			break;
